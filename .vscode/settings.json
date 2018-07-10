@@ -1,0 +1,49 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/*.js": {
+            "when": "$(basename).ts"
+        },
+        "**/*.map": {
+            "when": "$(basename)"
+        },
+        "**/*.css": {
+            "when": "$(basename).scss"
+        },
+        "**/*.metadata.json": true,
+        "node_modules": true,
+        "npm": true,
+        "aot": true,
+        "dist": true,
+        "build*": true,
+        "versioned*": true,
+        "*.cmd": true,
+        "test_output": true,
+        "npm-debug.log*": true,
+        "yarn-error.log*": true,
+        "web.config": true
+    },
+    "search.exclude": {
+        "npm": true,
+        "node_modules": true,
+        "build": true,
+        "build*": true,
+        "*.cmd": true,
+        "aot": true,
+        "build-tests": true,
+        "dist": true,
+        "dist-aot": true,
+        "test_output": true
+    },
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "editor.wordBasedSuggestions": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "[typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": false,
+        }
+    }
+}
