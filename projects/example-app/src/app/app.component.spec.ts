@@ -2,9 +2,9 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { configureTestSuite } from '../../../testing/public_api';
 
-const iterations = 100;
+const generateSpecs = (settings: { description: string, numOfIterations: number, configureSuite: () => void}) => () => {
+    const { description, numOfIterations, configureSuite } = settings;
 
-const generateSpecs = (description: string, configureSuite: () => void) => () => {
     let start: number;
 
     beforeAll(() => {
@@ -14,7 +14,7 @@ const generateSpecs = (description: string, configureSuite: () => void) => () =>
     configureSuite();
     // generate more specs (just to keep jasmine busy)
     // to showcase the difference with ng-bullet and without it
-    Array.from(Array(iterations)).forEach(() => {
+    Array.from(Array(numOfIterations)).forEach(() => {
         it('should create the app', async(() => {
             const fixture = TestBed.createComponent(AppComponent);
             const app = fixture.debugElement.componentInstance;
@@ -41,7 +41,10 @@ const generateSpecs = (description: string, configureSuite: () => void) => () =>
     });
 };
 
-describe('AppComponent tests without ng-bullet', generateSpecs("without ng-bullet", () => {
+describe('AppComponent tests without ng-bullet', generateSpecs({
+    description: "without ng-bullet",
+    numOfIterations: 100,
+    configureSuite: () => {
         beforeEach(async(() => {
             TestBed.configureTestingModule({
                 declarations: [
@@ -49,14 +52,19 @@ describe('AppComponent tests without ng-bullet', generateSpecs("without ng-bulle
                 ],
             }).compileComponents();
         }));
+    }
 }));
 
-describe('AppComponent tests with ng-bullet', generateSpecs("with ng-bullet", () => {
-    configureTestSuite(() => {
-        TestBed.configureTestingModule({
-            declarations: [
-                AppComponent
-            ],
+describe('AppComponent tests with ng-bullet', generateSpecs({
+    description: "with ng-bullet",
+    numOfIterations: 100,
+    configureSuite: () => {
+        configureTestSuite(() => {
+            TestBed.configureTestingModule({
+                declarations: [
+                    AppComponent
+                ],
+            });
         });
-    });
+    }
 }));
