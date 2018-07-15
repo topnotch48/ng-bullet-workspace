@@ -1,5 +1,5 @@
-import { Type } from "@angular/core";
-import { ComponentFixture, getTestBed, TestBed } from "@angular/core/testing";
+import { Type } from '@angular/core';
+import { ComponentFixture, getTestBed, TestBed } from '@angular/core/testing';
 
 /**
  * Reconfigures current test suit to prevent angular components re-compilation after every test run.
@@ -47,7 +47,7 @@ export const createTestContext = <T>(component: Type<T>) => {
     const fixture = TestBed.createComponent<T>(component);
     const testCtx = new TestCtx<T>(fixture);
     return testCtx;
-}
+};
 
 /**Same as @function createTestContext, but waits till fixture becomes stable */
 export const createStableTestContext = async <T>(component: Type<T>) => {
@@ -56,7 +56,7 @@ export const createStableTestContext = async <T>(component: Type<T>) => {
     await testCtx.fixture.whenStable();
     testCtx.detectChanges();
     return testCtx;
-}
+};
 
 
 /**
@@ -75,5 +75,5 @@ export class TestCtx<T> {
 
     public detectChanges() { this.fixture.detectChanges(); }
 
-    public resolve(component: Type<any>) { return this.fixture.debugElement.injector.get(component) };
+    public resolve(component: Type<any>) { return this.fixture.debugElement.injector.get(component); }
 }
