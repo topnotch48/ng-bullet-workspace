@@ -2,6 +2,13 @@ import { Component } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { configureTestSuite } from "./testing";
 
+@Component({
+    template: `<h1>Hello from ng-bullet</h1>`
+})
+class TestComponent {
+}
+
+
 describe('ng bullet tests', () => {
     const configureActionSuite = describe('when using configureTestSuite and configure action specified', () => {
         const originResetTestBed = TestBed.resetTestingModule;
@@ -65,9 +72,3 @@ describe('ng bullet tests', () => {
         });
     });
 });
-
-@Component({
-    template: `<h1>Hello from ng-bullet</h1>`
-})
-class TestComponent {
-}

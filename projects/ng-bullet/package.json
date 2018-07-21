@@ -1,0 +1,25 @@
+{
+    "name": "ng-bullet",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": {
+      "name": "nikitai",
+      "email": "nikita.yakovenko@gmail.com"
+    },
+    "description": "Angular library which drastically improves execution time of your component's unit tests",
+    "keywords": [
+        "ng",
+        "angular",
+        "unit testing",
+        "testing",
+        "performance",
+        "typescript",
+        "jasmine",
+        "TestBed"
+    ],
+    "peerDependencies": {
+        "@angular/common": ">=5.0.0",
+        "@angular/core": ">=5.0.0",
+        "jasmine-core": ">=2.5.0"
+    }
+}

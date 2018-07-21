@@ -1,5 +1,6 @@
 import { Type } from '@angular/core';
 import { ComponentFixture, getTestBed, TestBed } from '@angular/core/testing';
+import {} from 'jasmine';
 
 /**
  * Reconfigures current test suit to prevent angular components re-compilation after every test run.
@@ -38,6 +39,25 @@ export const configureTestSuite = (configureAction?: () => void) => {
 };
 
 /**
+ * A wrapper class around ComponentFixture, which provides useful accessros:
+ * component - to access component instance of current the fixture
+ * element - to access underlying native element of the current component
+ * detectChanges - to run change detections using current fixture
+ * resolve - to resolve a type using current fixture's injector
+ */
+export class TestCtx<T> {
+    constructor(public fixture: ComponentFixture<T>) { }
+
+    public get component() { return this.fixture.componentInstance; }
+
+    public get element(): HTMLElement { return this.fixture.debugElement.nativeElement; }
+
+    public detectChanges() { this.fixture.detectChanges(); }
+
+    public resolve(component: Type<any>) { return this.fixture.debugElement.injector.get(component); }
+}
+
+/**
  * Creates TestCtx instance for the Angular Component which is not initialized yet (no ngOnInit called)
  * Use case: you can override Component's providers before hooks are called.
  *
@@ -57,23 +77,3 @@ export const createStableTestContext = async <T>(component: Type<T>) => {
     testCtx.detectChanges();
     return testCtx;
 };
-
-
-/**
- * A wrapper class around ComponentFixture, which provides useful accessros:
- * component - to access component instance of current the fixture
- * element - to access underlying native element of the current component
- * detectChanges - to run change detections using current fixture
- * resolve - to resolve a type using current fixture's injector
- */
-export class TestCtx<T> {
-    constructor(public fixture: ComponentFixture<T>) { }
-
-    public get component() { return this.fixture.componentInstance; }
-
-    public get element(): HTMLElement { return this.fixture.debugElement.nativeElement; }
-
-    public detectChanges() { this.fixture.detectChanges(); }
-
-    public resolve(component: Type<any>) { return this.fixture.debugElement.injector.get(component); }
-}

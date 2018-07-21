@@ -3,38 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "testing": {
-      "root": "projects/testing",
-      "sourceRoot": "projects/testing/src",
+    "ng-bullet": {
+      "root": "projects/ng-bullet",
+      "sourceRoot": "projects/ng-bullet/src",
       "projectType": "library",
-      "prefix": "t",
+      "prefix": "bullet",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/testing/tsconfig.lib.json",
-            "project": "projects/testing/ng-package.json"
+            "tsConfig": "projects/ng-bullet/tsconfig.lib.json",
+            "project": "projects/ng-bullet/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/testing/ng-package.prod.json"
+              "project": "projects/ng-bullet/ng-package.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/testing/test.ts",
-            "tsConfig": "projects/testing/tsconfig.spec.json",
-            "karmaConfig": "projects/testing/karma.conf.js"
+            "main": "projects/ng-bullet/test.ts",
+            "tsConfig": "projects/ng-bullet/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-bullet/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/testing/tsconfig.lib.json",
-              "projects/testing/tsconfig.spec.json"
+              "projects/ng-bullet/tsconfig.lib.json",
+              "projects/ng-bullet/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

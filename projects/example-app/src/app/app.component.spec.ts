@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { configureTestSuite } from '../../../testing/public_api';
+import { configureTestSuite } from 'ng-bullet';
 
 const generateSpecs = (settings: { description: string, numOfIterations: number, configureSuite: () => void}) => () => {
     const { description, numOfIterations, configureSuite } = settings;

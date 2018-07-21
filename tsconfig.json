@@ -20,11 +20,11 @@
             "dom"
         ],
         "paths": {
-            "testing": [
-                "dist/testing"
+            "ng-bullet": [
+                "dist/ng-bullet"
             ],
-            "testing/*": [
-                "dist/testing/*"
+            "ng-bullet/*": [
+                "dist/ng-bullet/*"
             ]
         }
     }
