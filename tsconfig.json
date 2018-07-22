@@ -19,13 +19,5 @@
             "es2017",
             "dom"
         ],
-        "paths": {
-            "ng-bullet": [
-                "dist/ng-bullet"
-            ],
-            "ng-bullet/*": [
-                "dist/ng-bullet/*"
-            ]
-        }
     }
 }

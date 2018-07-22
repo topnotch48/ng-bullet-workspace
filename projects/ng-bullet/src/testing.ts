@@ -1,6 +1,5 @@
 import { Type } from '@angular/core';
 import { ComponentFixture, getTestBed, TestBed } from '@angular/core/testing';
-import {} from 'jasmine';
 
 /**
  * Reconfigures current test suit to prevent angular components re-compilation after every test run.

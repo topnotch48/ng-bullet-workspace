@@ -26,6 +26,7 @@
     "bundle": "ng lint && ng test ng-bullet && ng build ng-bullet --prod"
   },
   "dependencies": {
+    "ng-bullet": "1.0.2",
     "@angular/common": "6.0.3",
     "@angular/core": "6.0.3",
     "@angular/compiler": "6.0.3",
