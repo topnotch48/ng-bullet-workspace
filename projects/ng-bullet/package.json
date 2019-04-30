@@ -6,6 +6,10 @@
       "name": "nikitai",
       "email": "nikita.yakovenko@gmail.com"
     },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/topnotch48/ng-bullet-workspace.git"
+    },
     "description": "Angular library which drastically improves execution time of your component's unit tests",
     "keywords": [
         "ng",
