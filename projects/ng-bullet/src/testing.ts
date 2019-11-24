@@ -28,7 +28,10 @@ export const configureTestSuite = (configureAction?: () => void) => {
 
     afterEach(() => {
         testBedApi._activeFixtures.forEach((fixture: ComponentFixture<any>) => fixture.destroy());
+        // reset ViewEngine TestBed
         testBedApi._instantiated = false;
+        // reset Ivy TestBed
+        testBedApi._testModuleRef = null;
     });
 
     afterAll(() => {
