@@ -1,5 +1,6 @@
+import { ComponentFixture, TestBed, getTestBed } from '@angular/core/testing';
+
 import { Type } from '@angular/core';
-import { ComponentFixture, getTestBed, TestBed } from '@angular/core/testing';
 
 /**
  * Reconfigures current test suit to prevent angular components re-compilation after every test run.
@@ -20,11 +21,13 @@ export const configureTestSuite = (configureAction?: () => void) => {
     });
 
     if (configureAction) {
-        beforeAll((done: DoneFn) => (async () => {
+        beforeAll((done: DoneFn) => {
+          (async function() {
             configureAction();
             await TestBed.compileComponents();
-        })().then(done).catch(done.fail));
-    }
+          }().then(done).catch(done.fail));
+        });
+      }
 
     afterEach(() => {
         testBedApi._activeFixtures.forEach((fixture: ComponentFixture<any>) => fixture.destroy());
