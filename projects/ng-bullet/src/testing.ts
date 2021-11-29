@@ -20,6 +20,7 @@ export const configureTestSuite = (configureAction?: () => void) => {
         TestBed.resetTestingModule = () => TestBed;
     });
 
+    // https://github.com/topnotch48/ng-bullet-workspace/issues/38
     if (configureAction) {
         beforeAll((done: DoneFn) => {
           (async function() {
