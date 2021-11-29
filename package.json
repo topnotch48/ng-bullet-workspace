@@ -21,6 +21,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build  --verbose",
+    "prepare": "npm run build",
     "test": "ng test",
     "lint": "ng lint --verbose",
     "bundle": "ng lint && ng test ng-bullet && ng build ng-bullet --prod"
