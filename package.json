@@ -20,32 +20,31 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build  --verbose",
+    "build": "ng build ng-bullet --prod",
     "test": "ng test",
     "lint": "ng lint --verbose",
     "bundle": "ng lint && ng test ng-bullet && ng build ng-bullet --prod"
   },
   "dependencies": {
     "ng-bullet": "1.0.3",
-    "@angular/common": "6.0.3",
-    "@angular/core": "6.0.3",
-    "@angular/compiler": "6.0.3",
-    "@angular/animations": "6.0.3",
-    "@angular/forms": "6.0.3",
-    "@angular/http": "6.0.3",
-    "@angular/platform-browser": "6.0.3",
-    "@angular/platform-browser-dynamic": "6.0.3",
-    "@angular/router": "6.0.3",
-    "core-js": "2.5.4",
-    "rxjs": "6.0.0",
-    "zone.js": "0.8.26"
+    "@angular/common": "13.0.2",
+    "@angular/core": "13.0.2",
+    "@angular/compiler": "13.0.2",
+    "@angular/animations": "13.0.2",
+    "@angular/forms": "13.0.2",
+    "@angular/platform-browser": "13.0.2",
+    "@angular/platform-browser-dynamic": "13.0.2",
+    "@angular/router": "13.0.2",
+    "core-js": "3.19.1",
+    "rxjs": "6.6.3",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular/cli": "6.0.8",
-    "@angular/compiler-cli": "6.0.3",
-    "@angular-devkit/build-ng-packagr": "0.6.8",
-    "@angular-devkit/build-angular": "0.6.8",
-    "@angular/language-service": "6.0.3",
+    "@angular/cli": "13.0.2",
+    "@angular/compiler-cli": "13.0.2",
+    "@angular-devkit/build-ng-packagr": "0.1002.0",
+    "@angular-devkit/build-angular": "13.0.2",
+    "@angular/language-service": "13.0.2",
     "@types/jasmine": "2.8.6",
     "@types/jasminewd2": "2.0.3",
     "@types/node": "8.9.4",
@@ -57,11 +56,11 @@
     "karma-coverage-istanbul-reporter": "2.0.0",
     "karma-jasmine": "1.1.1",
     "karma-jasmine-html-reporter": "0.2.2",
-    "ng-packagr": "3.0.3",
+    "ng-packagr": "13.0.3",
     "ts-node": "5.0.1",
     "tsickle": "0.25.5",
     "tslib": "1.7.1",
     "tslint": "5.9.1",
-    "typescript": "2.7.2"
+    "typescript": "4.4.4"
   }
 }
